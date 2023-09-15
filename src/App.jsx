@@ -5,6 +5,8 @@ import Hero from "./pages/Hero/Hero";
 import Listings from "./pages/Listings/Listings";
 import Whyus from "./pages/Whyus/Whyus";
 import Contact from "./pages/Contact/Contact";
+import { Route, Routes } from "react-router";
+import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 
 function App() {
 	return (
@@ -16,7 +18,10 @@ function App() {
 				</section>
 
 				<section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
-					<Listings />
+					<Routes>
+						<Route path="/" element={<Listings />} />
+						<Route path="/property/:id" element={<PropertyDetails />} />
+					</Routes>
 				</section>
 
 				<section className="relative h-screen text-gray-200 snap-center">

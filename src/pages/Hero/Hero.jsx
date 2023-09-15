@@ -16,7 +16,7 @@ const Hero = () => {
 							Here you can discover our humble listing of property such as
 							houses and lands spread across Indonesia
 						</p>
-						<button className="px-4 py-1 text-sm font-semibold text-gray-600 bg-white rounded-full ">
+						<button className="px-4 py-1 text-sm font-semibold text-gray-600 duration-200 bg-white rounded-full hover:bg-orange-400 hover:text-white">
 							check our listing
 						</button>
 					</div>
