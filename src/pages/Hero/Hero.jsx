@@ -5,13 +5,17 @@ import heroImage from "../../assets/heroImage.jpg";
 const Hero = () => {
 	return (
 		<div className="h-full">
-			<img src={heroImage} className="h-full object-cover" />
-			<div className="absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex items-center justify-center p-6">
-				<div className="flex flex-col gap-4">
+			<img src={heroImage} className="object-cover h-full" />
+			<div className="absolute top-0 left-0 flex items-center justify-center w-full h-full p-6 bg-black bg-opacity-60">
+				<div className="flex flex-col gap-8 ">
 					<h2 className="text-4xl">Invest in Your Tomorrow</h2>
-					<span className="text-lg">Affordable Land Options Today</span>
-					<button className="bg-white px-4 py-1 text-gray-600 rounded-full w-32 font-semibold text-sm">
-						our listings
+					<span className="text-lg">Affordable Properties Options Today</span>
+					<p className="self-end w-1/2 text-end">
+						Here you can discover our humble listing of property such as houses
+						and lands spread across Indonesia
+					</p>
+					<button className="self-end w-40 px-4 py-1 text-sm font-semibold text-gray-600 bg-white rounded-full">
+						check our listing
 					</button>
 				</div>
 			</div>
