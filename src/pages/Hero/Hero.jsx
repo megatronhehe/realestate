@@ -10,13 +10,16 @@ const Hero = () => {
 				<div className="flex flex-col gap-8 ">
 					<h2 className="text-4xl">Invest in Your Tomorrow</h2>
 					<span className="text-lg">Affordable Properties Options Today</span>
-					<p className="self-end w-1/2 text-end">
-						Here you can discover our humble listing of property such as houses
-						and lands spread across Indonesia
-					</p>
-					<button className="self-end w-40 px-4 py-1 text-sm font-semibold text-gray-600 bg-white rounded-full">
-						check our listing
-					</button>
+
+					<div className="flex flex-col self-end w-2/3 gap-8 p-4 border-l sm:w-2/5">
+						<p className="text-justify ">
+							Here you can discover our humble listing of property such as
+							houses and lands spread across Indonesia
+						</p>
+						<button className="px-4 py-1 text-sm font-semibold text-gray-600 bg-white rounded-full ">
+							check our listing
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

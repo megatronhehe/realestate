@@ -7,13 +7,13 @@ const Listings = () => {
 		<div className="flex flex-col justify-center w-full h-full max-w-4xl gap-6 p-6 text-gray-600 bg-white">
 			<div className="flex flex-col gap-2">
 				<h1 className="text-3xl font-semibold">Find your opportunity</h1>
-				<span>Find your perfect land on our listings</span>
+				<span>Find the property that fits you in our listings</span>
 			</div>
 
 			<div className="flex flex-col justify-between gap-6 sm:flex-row">
 				<div className="flex flex-col gap-2">
 					<h2>Location available:</h2>
-					<ul className="flex gap-2 overflow-auto">
+					<ul className="flex gap-2 overflow-auto text-sm">
 						<li className="flex-shrink-0 px-4 py-1 text-white bg-orange-400 rounded-full">
 							all
 						</li>
@@ -31,7 +31,7 @@ const Listings = () => {
 
 				<div className="flex flex-col gap-2">
 					<h2>Types available:</h2>
-					<ul className="flex gap-2 overflow-auto">
+					<ul className="flex gap-2 overflow-auto text-sm">
 						<li className="flex-shrink-0 px-4 py-1 text-white bg-orange-400 rounded-full">
 							all
 						</li>
