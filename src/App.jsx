@@ -15,7 +15,7 @@ function App() {
 					<Hero />
 				</section>
 
-				<section className="relative flex justify-center h-screen text-gray-200 snap-center">
+				<section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
 					<Listings />
 				</section>
 

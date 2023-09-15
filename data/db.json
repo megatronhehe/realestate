@@ -1,0 +1,44 @@
+{
+	"propertiesData": [
+		{
+			"id": 0,
+			"location": {
+				"city": "Malang",
+				"province": "East Java"
+			},
+			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"type": "Land",
+			"images": []
+		},
+		{
+			"id": 1,
+			"location": {
+				"city": "Denpasar",
+				"province": "Bali"
+			},
+			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"type": "House",
+			"images": []
+		},
+		{
+			"id": 2,
+			"location": {
+				"city": "Balikpapan",
+				"province": "East Borneo"
+			},
+			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"type": "Land",
+			"images": []
+		},
+		{
+			"id": 3,
+			"location": {
+				"city": "Bontang",
+				"province": "East Borneo"
+			},
+			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"type": "House",
+			"images": []
+		}
+	]
+}
