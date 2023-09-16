@@ -12,8 +12,6 @@ import Featured from "./pages/Featured/Featured";
 function App() {
 	const [curSectionIndicator, setCurSectionIndicator] = useState("home");
 
-	console.log(curSectionIndicator);
-
 	return (
 		<>
 			<Navbar curSectionIndicator={curSectionIndicator} />

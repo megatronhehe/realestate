@@ -9,7 +9,7 @@
 			},
 			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
 			"type": "Land",
-			"images": ["/assets/heroImage.jpg"],
+			"images": ["src/assets/malang.jpg"],
 			"price": 800
 		},
 		{
@@ -21,7 +21,7 @@
 			},
 			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
 			"type": "House",
-			"images": [],
+			"images": ["src/assets/bali.jpg"],
 			"price": 900
 		},
 		{
@@ -33,7 +33,7 @@
 			},
 			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
 			"type": "Land",
-			"images": [],
+			"images": ["src/assets/balikpapan.jpg"],
 			"price": 800
 		},
 		{
@@ -45,7 +45,7 @@
 			},
 			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
 			"type": "House",
-			"images": [],
+			"images": ["src/assets/bontang.jpg"],
 			"price": 600
 		}
 	]

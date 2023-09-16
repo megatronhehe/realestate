@@ -31,32 +31,30 @@ const Listings = ({ curSectionIndicator, setCurSectionIndicator }) => {
 	));
 
 	return (
-		<>
-			<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white">
+		<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white">
+			<div className="flex flex-col gap-2">
+				<h1 className="text-3xl font-semibold">Find your opportunity</h1>
+				<span>Find the property that fits you in our listings</span>
+			</div>
+
+			<div className="flex flex-col justify-between gap-6 sm:flex-row">
 				<div className="flex flex-col gap-2">
-					<h1 className="text-3xl font-semibold">Find your opportunity</h1>
-					<span>Find the property that fits you in our listings</span>
+					<h2>Location available:</h2>
+					<LocationFilter setFilter={setFilter} filter={filter} />
 				</div>
 
-				<div className="flex flex-col justify-between gap-6 sm:flex-row">
-					<div className="flex flex-col gap-2">
-						<h2>Location available:</h2>
-						<LocationFilter setFilter={setFilter} filter={filter} />
-					</div>
-
-					<div className="flex flex-col gap-2">
-						<h2>Types available:</h2>
-						<TypeFilter setFilter={setFilter} filter={filter} />
-					</div>
-				</div>
-
-				<div>
-					<ul className="flex gap-4 overflow-auto sm:grid sm:grid-cols-3">
-						{isLoading.fetching ? "loading..." : propertiesCardElement}
-					</ul>
+				<div className="flex flex-col gap-2">
+					<h2>Types available:</h2>
+					<TypeFilter setFilter={setFilter} filter={filter} />
 				</div>
 			</div>
-		</>
+
+			<div>
+				<ul className="flex gap-4 overflow-auto sm:grid sm:grid-cols-3">
+					{isLoading.fetching ? "loading..." : propertiesCardElement}
+				</ul>
+			</div>
+		</div>
 	);
 };
 

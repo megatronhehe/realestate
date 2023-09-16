@@ -42,7 +42,7 @@ const Navbar = ({ curSectionIndicator }) => {
 
 	return (
 		<>
-			<nav className="fixed top-0 left-0 z-10 flex items-center justify-between w-full text-gray-200 bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm">
+			<nav className="fixed top-0 left-0 z-10 flex items-center justify-between w-full p-4 text-gray-200 bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm">
 				<h1 className="flex items-center gap-2 text-lg font-semibold tracking-wide ">
 					<FaDiamond />
 					Oka Estate

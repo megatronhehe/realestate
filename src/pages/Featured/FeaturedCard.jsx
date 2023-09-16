@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import { FaLocationDot, FaSquare, FaHouse } from "react-icons/fa6";
 
-import heroImage from "../../assets/heroImage.jpg";
-
 import { Link } from "react-router-dom";
 
 const FeaturedCard = ({ property }) => {
@@ -17,11 +15,11 @@ const FeaturedCard = ({ property }) => {
 		<li
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
-			className="relative flex flex-col justify-between flex-shrink-0 w-full h-56 overflow-hidden bg-gray-100 snap-center sm:w-full rounded-xl"
+			className="relative flex flex-col justify-between flex-shrink-0 w-full h-56 overflow-hidden bg-gray-100 snap-center rounded-xl sm:h-80"
 		>
 			<img
-				src={heroImage}
-				className="absolute top-0 left-0 object-cover h-full"
+				src={`../${images[0]}`}
+				className="absolute top-0 left-0 object-cover w-full h-full"
 			/>
 
 			<div

@@ -20,7 +20,7 @@ const PropertyCard = ({ property }) => {
 			className="relative flex flex-col justify-between flex-shrink-0 w-56 h-64 overflow-hidden bg-gray-100 sm:w-full rounded-xl"
 		>
 			<img
-				src={heroImage}
+				src={`../${images[0]}`}
 				className="absolute top-0 left-0 object-cover h-full"
 			/>
 

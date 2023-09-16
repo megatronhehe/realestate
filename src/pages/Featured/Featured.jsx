@@ -7,7 +7,7 @@ import PropertiesContext from "../../context/propertiesContext";
 import FeaturedCard from "./FeaturedCard";
 import { Link } from "react-router-dom";
 
-import { FaEarthAsia, FaLocationDot, FaHouse } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 const Featured = ({ setCurSectionIndicator }) => {
 	const { properties } = useContext(PropertiesContext);
@@ -20,52 +20,64 @@ const Featured = ({ setCurSectionIndicator }) => {
 		}
 	}, [inView]);
 
-	const propertiesElement = properties.map((property) => (
+	const first3properties = properties.slice(0, 3);
+
+	const propertiesElement = first3properties.map((property) => (
 		<FeaturedCard key={property.id} property={property} />
 	));
 
 	return (
 		<div
 			ref={ref}
-			className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white"
+			className="flex flex-col w-full h-full max-w-4xl gap-8 p-6 pt-24 text-gray-600 bg-white"
 		>
 			<div className="flex flex-col gap-2">
-				<h1 className="text-3xl font-semibold">Featured Listing</h1>
-				<span>Find the property that fits you in our listings</span>
+				<h1 className="text-3xl font-semibold tracking-wide">
+					<span className="font-bold text-orange-400">Featured</span> Property
+				</h1>
+				<p>Find the property that fits you in our listings.</p>
 			</div>
 
-			<ul className="flex gap-4">
-				<li className="flex flex-col justify-between w-1/3 p-4 text-white bg-orange-400 sm:w-1/6 rounded-xl">
-					<span className="flex items-center gap-4 text-2xl font-bold ">
-						<FaHouse />4
-					</span>
-					<h2 className="text-sm">Properties Listed</h2>
-				</li>
+			<div className="flex justify-center">
+				<ul className="flex w-full max-w-xl gap-2 sm:gap-6">
+					<li className="relative flex flex-col items-center justify-center w-full p-4 text-white bg-orange-400 rounded-lg">
+						<h2 className="absolute flex items-center justify-center w-10 h-10 font-bold text-orange-400 bg-white border-4 border-orange-400 rounded-full -top-5">
+							4
+						</h2>
+						<span className="pt-4 text-center">
+							<span className="font-semibold ">Properties</span> listed
+						</span>
+					</li>
 
-				<li className="flex flex-col justify-between w-1/3 p-4 text-white bg-gray-600 sm:w-1/5 rounded-xl">
-					<span className="flex items-center gap-4 text-2xl font-bold ">
-						<FaEarthAsia />3
-					</span>
-					<h2 className="text-sm">Different Provinces</h2>
-				</li>
+					<li className="relative flex flex-col items-center justify-center w-full p-4 text-white bg-orange-400 rounded-lg">
+						<h2 className="absolute flex items-center justify-center w-10 h-10 font-bold text-orange-400 bg-white border-4 border-orange-400 rounded-full -top-5">
+							3
+						</h2>
+						<span className="pt-4 text-center">
+							Different <span className="font-semibold ">Provinces</span>
+						</span>
+					</li>
 
-				<li className="flex flex-col justify-between w-1/3 p-4 text-white bg-gray-800 sm:w-1/4 rounded-xl">
-					<span className="flex items-center gap-4 text-2xl font-bold ">
-						<FaLocationDot />4
-					</span>
-					<h2 className="text-sm">Different Cities</h2>
-				</li>
-			</ul>
+					<li className="relative flex flex-col items-center justify-center w-full p-4 text-white bg-orange-400 rounded-lg">
+						<h2 className="absolute flex items-center justify-center w-10 h-10 font-bold text-orange-400 bg-white border-4 border-orange-400 rounded-full -top-5">
+							4
+						</h2>
+						<span className="pt-4 text-center">
+							Different <span className="font-semibold ">Cities</span>
+						</span>
+					</li>
+				</ul>
+			</div>
 
-			<ul className="flex gap-4 overflow-auto sm:gap-8 sm:grid sm:grid-cols-2 snap-mandatory snap-x">
+			<ul className="flex gap-4 overflow-auto sm:gap-8 sm:grid sm:grid-cols-3 snap-mandatory snap-x">
 				{propertiesElement}
 			</ul>
 
 			<Link
 				to="/properties"
-				className="self-center px-4 py-2 text-white bg-orange-400 rounded-xl"
+				className="flex items-center self-center gap-2 px-3 py-1 text-orange-400 duration-200 rounded-full hover:bg-orange-400 hover:text-white hover:scale-110"
 			>
-				view all
+				view all <FaAngleRight />
 			</Link>
 		</div>
 	);
