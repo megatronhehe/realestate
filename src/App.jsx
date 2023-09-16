@@ -7,33 +7,57 @@ import Whyus from "./pages/Whyus/Whyus";
 import Contact from "./pages/Contact/Contact";
 import { Route, Routes } from "react-router";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
+import Featured from "./pages/Featured/Featured";
 
 function App() {
 	return (
 		<>
 			<Navbar />
 			<main className="h-screen overflow-y-scroll snap-y snap-mandatory font-extralight">
-				<section className="relative h-screen text-gray-200 bg-black snap-center bg-opacity-70">
-					<Hero />
-				</section>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<>
+								<section className="relative h-screen text-gray-200 bg-black snap-center bg-opacity-70">
+									<Hero />
+								</section>
 
-				<section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
+								<section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
+									<Featured />
+								</section>
+
+								<section className="relative h-screen text-gray-200 snap-center">
+									<Whyus />
+								</section>
+
+								<section className="relative h-screen text-gray-200 snap-center">
+									<Contact />
+								</section>
+							</>
+						}
+					/>
+					<Route
+						path="/properties"
+						element={
+							<section className="relative flex justify-center h-screen text-gray-200 bg-white">
+								<Listings />
+							</section>
+						}
+					/>
+				</Routes>
+			</main>
+		</>
+	);
+}
+
+{
+	/* <section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
 					<Routes>
 						<Route path="/" element={<Listings />} />
 						<Route path="/property/:id" element={<PropertyDetails />} />
 					</Routes>
-				</section>
-
-				<section className="relative h-screen text-gray-200 snap-center">
-					<Whyus />
-				</section>
-
-				<section className="relative h-screen text-gray-200 snap-center">
-					<Contact />
-				</section>
-			</main>
-		</>
-	);
+				</section> */
 }
 
 export default App;
