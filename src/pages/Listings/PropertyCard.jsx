@@ -34,7 +34,7 @@ const PropertyCard = ({ property }) => {
 						<h3>starting</h3>
 						<span className="font-semibold">Rp.{price} mil.</span>
 						<Link
-							to={`/property/${id}`}
+							to={`/properties/${id}`}
 							className="flex justify-center w-full mt-12 duration-200 hover:font-semibold"
 						>
 							view property

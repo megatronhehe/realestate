@@ -27,7 +27,7 @@ const PropertyDetails = () => {
 	const isErrorExist = error.length > 0;
 
 	return (
-		<div className="pt-20 text-2xl text-black">
+		<div className="pt-20 text-2xl text-black bg-white">
 			{isLoading.fetching
 				? "loading..."
 				: isErrorExist

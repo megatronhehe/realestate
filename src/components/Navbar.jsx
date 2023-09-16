@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import { FaBars, FaDiamond } from "react-icons/fa6";
 import NavbarDropdown from "./NavbarDropdown";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	const [isMobileMode, setIsMobileMode] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [toggleNavbar, setToggleNavbar] = useState(false);
+	const [curSection, setCurSection] = useState("");
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -25,6 +28,18 @@ const Navbar = () => {
 		}
 	}, [windowWidth]);
 
+	const scrollToSection = (section) => {
+		const element = document.getElementById(section);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+			setToggleNavbar(false);
+		}
+	};
+
+	useEffect(() => {
+		scrollToSection(curSection);
+	}, [curSection]);
+
 	return (
 		<>
 			<nav className="fixed top-0 left-0 z-10 flex items-center justify-between w-full p-4 text-gray-200 bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm">
@@ -34,21 +49,45 @@ const Navbar = () => {
 				</h1>
 				{!isMobileMode ? (
 					<ul className="flex gap-6 text-sm font-extralight ">
-						<li>Home</li>
-						<li>Listings</li>
-						<li>About</li>
-						<li>Contact</li>
+						<li>
+							<Link to="/" onClick={() => setCurSection("home")}>
+								Home
+							</Link>
+						</li>
+						<li>
+							<Link to="/" onClick={() => setCurSection("featured")}>
+								Featured
+							</Link>
+						</li>
+						<li>
+							<Link to="/properties">Listing</Link>
+						</li>
+						<li>
+							<Link to="/" onClick={() => setCurSection("about")}>
+								About
+							</Link>
+						</li>
+						<li>
+							<Link to="/" onClick={() => setCurSection("contact")}>
+								Contact
+							</Link>
+						</li>
 					</ul>
 				) : (
 					<ul className="flex gap-6 text-xl ">
-						<li>
+						<li onClick={() => setToggleNavbar(true)}>
 							<FaBars />
 						</li>
 					</ul>
 				)}
 			</nav>
 
-			<NavbarDropdown />
+			{toggleNavbar && (
+				<NavbarDropdown
+					toggleNavbar={toggleNavbar}
+					setToggleNavbar={setToggleNavbar}
+				/>
+			)}
 		</>
 	);
 };

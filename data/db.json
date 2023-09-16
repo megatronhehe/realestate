@@ -3,6 +3,7 @@
 		{
 			"id": 0,
 			"location": {
+				"address": "jl.xxxx no.xxxx",
 				"city": "Malang",
 				"province": "East Java"
 			},
@@ -14,6 +15,7 @@
 		{
 			"id": 1,
 			"location": {
+				"address": "jl.xxxx no.xxxx",
 				"city": "Denpasar",
 				"province": "Bali"
 			},
@@ -25,6 +27,7 @@
 		{
 			"id": 2,
 			"location": {
+				"address": "jl.xxxx no.xxxx",
 				"city": "Balikpapan",
 				"province": "East Borneo"
 			},
@@ -36,6 +39,7 @@
 		{
 			"id": 3,
 			"location": {
+				"address": "jl.xxxx no.xxxx",
 				"city": "Bontang",
 				"province": "East Borneo"
 			},

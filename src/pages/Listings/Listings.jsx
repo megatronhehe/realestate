@@ -1,5 +1,9 @@
 import React, { useContext, useState } from "react";
 
+import { FaCaretLeft } from "react-icons/fa6";
+
+import { useNavigate } from "react-router-dom";
+
 import PropertiesContext from "../../context/propertiesContext";
 
 import PropertyCard from "./PropertyCard";
@@ -8,6 +12,8 @@ import TypeFilter from "./TypeFilter";
 
 const Listings = () => {
 	const { properties, isLoading } = useContext(PropertiesContext);
+
+	const nav = useNavigate();
 
 	const [filter, setFilter] = useState({
 		province: "",
@@ -27,30 +33,32 @@ const Listings = () => {
 	));
 
 	return (
-		<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 text-gray-600 bg-white pt-28">
-			<div className="flex flex-col gap-2">
-				<h1 className="text-3xl font-semibold">Find your opportunity</h1>
-				<span>Find the property that fits you in our listings</span>
-			</div>
-
-			<div className="flex flex-col justify-between gap-6 sm:flex-row">
+		<>
+			<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white">
 				<div className="flex flex-col gap-2">
-					<h2>Location available:</h2>
-					<LocationFilter setFilter={setFilter} filter={filter} />
+					<h1 className="text-3xl font-semibold">Find your opportunity</h1>
+					<span>Find the property that fits you in our listings</span>
 				</div>
 
-				<div className="flex flex-col gap-2">
-					<h2>Types available:</h2>
-					<TypeFilter setFilter={setFilter} filter={filter} />
+				<div className="flex flex-col justify-between gap-6 sm:flex-row">
+					<div className="flex flex-col gap-2">
+						<h2>Location available:</h2>
+						<LocationFilter setFilter={setFilter} filter={filter} />
+					</div>
+
+					<div className="flex flex-col gap-2">
+						<h2>Types available:</h2>
+						<TypeFilter setFilter={setFilter} filter={filter} />
+					</div>
+				</div>
+
+				<div>
+					<ul className="flex gap-4 overflow-auto sm:grid sm:grid-cols-3">
+						{isLoading.fetching ? "loading..." : propertiesCardElement}
+					</ul>
 				</div>
 			</div>
-
-			<div>
-				<ul className="flex gap-4 overflow-auto sm:grid sm:grid-cols-3">
-					{isLoading.fetching ? "loading..." : propertiesCardElement}
-				</ul>
-			</div>
-		</div>
+		</>
 	);
 };
 

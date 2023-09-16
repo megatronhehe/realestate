@@ -6,7 +6,7 @@ const Hero = () => {
 	return (
 		<div className="h-full">
 			<img src={heroImage} className="object-cover h-full" />
-			<div className="absolute top-0 left-0 flex items-center justify-center w-full h-full p-6 bg-black bg-opacity-60">
+			<div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full p-6 bg-black bg-opacity-60">
 				<div className="flex flex-col gap-8 ">
 					<h2 className="text-4xl">Invest in Your Tomorrow</h2>
 					<span className="text-lg">Affordable Properties Options Today</span>
@@ -21,6 +21,12 @@ const Hero = () => {
 						</button>
 					</div>
 				</div>
+
+				<ul className="flex gap-8 px-4 mt-20 bg-black rounded-full backdrop-filter backdrop-blur-sm bg-opacity-40">
+					<li className="px-3 py-3 font-normal border-black ">Listing</li>
+					<li className="px-3 py-3 font-normal rounded-full">About</li>
+					<li className="px-3 py-3 font-normal rounded-full">Contact</li>
+				</ul>
 			</div>
 		</div>
 	);

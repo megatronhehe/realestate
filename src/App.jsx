@@ -19,19 +19,31 @@ function App() {
 						path="/"
 						element={
 							<>
-								<section className="relative h-screen text-gray-200 bg-black snap-center bg-opacity-70">
+								<section
+									id="home"
+									className="relative h-screen text-gray-200 bg-black snap-center bg-opacity-70"
+								>
 									<Hero />
 								</section>
 
-								<section className="relative flex justify-center h-screen text-gray-200 bg-white snap-center">
+								<section
+									id="featured"
+									className="relative flex justify-center h-screen text-gray-200 bg-white snap-center"
+								>
 									<Featured />
 								</section>
 
-								<section className="relative h-screen text-gray-200 snap-center">
+								<section
+									id="about"
+									className="relative h-screen text-gray-200 snap-center"
+								>
 									<Whyus />
 								</section>
 
-								<section className="relative h-screen text-gray-200 snap-center">
+								<section
+									id="contact"
+									className="relative h-screen text-gray-200 snap-center"
+								>
 									<Contact />
 								</section>
 							</>
@@ -42,6 +54,14 @@ function App() {
 						element={
 							<section className="relative flex justify-center h-screen text-gray-200 bg-white">
 								<Listings />
+							</section>
+						}
+					/>
+					<Route
+						path="/properties/:id"
+						element={
+							<section className="relative flex justify-center h-screen text-gray-200 bg-white">
+								<PropertyDetails />
 							</section>
 						}
 					/>

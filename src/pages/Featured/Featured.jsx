@@ -10,16 +10,12 @@ import { FaEarthAsia, FaLocationDot, FaHouse } from "react-icons/fa6";
 const Featured = () => {
 	const { properties } = useContext(PropertiesContext);
 
-	console.log(properties);
-
 	const propertiesElement = properties.map((property) => (
 		<FeaturedCard key={property.id} property={property} />
 	));
 
 	return (
-		<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 text-gray-600 bg-white pt-28">
-			<button></button>
-
+		<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white">
 			<div className="flex flex-col gap-2">
 				<h1 className="text-3xl font-semibold">Featured Listing</h1>
 				<span>Find the property that fits you in our listings</span>
