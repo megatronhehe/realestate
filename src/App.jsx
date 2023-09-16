@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero/Hero";
@@ -10,9 +10,13 @@ import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Featured from "./pages/Featured/Featured";
 
 function App() {
+	const [curSectionIndicator, setCurSectionIndicator] = useState("home");
+
+	console.log(curSectionIndicator);
+
 	return (
 		<>
-			<Navbar />
+			<Navbar curSectionIndicator={curSectionIndicator} />
 			<main className="h-screen overflow-y-scroll snap-y snap-mandatory font-extralight">
 				<Routes>
 					<Route
@@ -23,28 +27,28 @@ function App() {
 									id="home"
 									className="relative h-screen text-gray-200 bg-black snap-center bg-opacity-70"
 								>
-									<Hero />
+									<Hero setCurSectionIndicator={setCurSectionIndicator} />
 								</section>
 
 								<section
 									id="featured"
 									className="relative flex justify-center h-screen text-gray-200 bg-white snap-center"
 								>
-									<Featured />
+									<Featured setCurSectionIndicator={setCurSectionIndicator} />
 								</section>
 
 								<section
 									id="about"
 									className="relative h-screen text-gray-200 snap-center"
 								>
-									<Whyus />
+									<Whyus setCurSectionIndicator={setCurSectionIndicator} />
 								</section>
 
 								<section
 									id="contact"
 									className="relative h-screen text-gray-200 snap-center"
 								>
-									<Contact />
+									<Contact setCurSectionIndicator={setCurSectionIndicator} />
 								</section>
 							</>
 						}
@@ -53,7 +57,10 @@ function App() {
 						path="/properties"
 						element={
 							<section className="relative flex justify-center h-screen text-gray-200 bg-white">
-								<Listings />
+								<Listings
+									curSectionIndicator={curSectionIndicator}
+									setCurSectionIndicator={setCurSectionIndicator}
+								/>
 							</section>
 						}
 					/>

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { useInView } from "react-intersection-observer";
 
 import {
 	FaRegThumbsUp,
@@ -7,9 +9,20 @@ import {
 	FaHeart,
 } from "react-icons/fa6";
 
-const Whyus = () => {
+const Whyus = ({ setCurSectionIndicator }) => {
+	const { ref, inView } = useInView({ threshold: 0.2 });
+
+	useEffect(() => {
+		if (inView) {
+			setCurSectionIndicator("about");
+		}
+	}, [inView]);
+
 	return (
-		<div className="flex items-center justify-center h-full p-6 text-gray-600 bg-orange-400 ">
+		<div
+			ref={ref}
+			className="flex items-center justify-center h-full p-6 text-gray-600 bg-orange-400 "
+		>
 			<div className="flex flex-col items-center w-full max-w-4xl gap-4">
 				<h1 className="text-2xl font-semibold text-white sm:mb-8">Why us?</h1>
 				<ul className="flex flex-col w-full gap-4 sm:grid sm:grid-cols-2 sm:gap-8">

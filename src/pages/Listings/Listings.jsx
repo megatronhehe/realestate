@@ -1,8 +1,4 @@
-import React, { useContext, useState } from "react";
-
-import { FaCaretLeft } from "react-icons/fa6";
-
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
 
 import PropertiesContext from "../../context/propertiesContext";
 
@@ -10,15 +6,17 @@ import PropertyCard from "./PropertyCard";
 import LocationFilter from "./LocationFIlter";
 import TypeFilter from "./TypeFilter";
 
-const Listings = () => {
+const Listings = ({ curSectionIndicator, setCurSectionIndicator }) => {
 	const { properties, isLoading } = useContext(PropertiesContext);
-
-	const nav = useNavigate();
 
 	const [filter, setFilter] = useState({
 		province: "",
 		type: "",
 	});
+
+	useEffect(() => {
+		setCurSectionIndicator("");
+	}, [curSectionIndicator]);
 
 	const filteredProperties = properties.filter((property) => {
 		const matchProvince =

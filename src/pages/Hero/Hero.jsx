@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import heroImage from "../../assets/heroImage.jpg";
 
-const Hero = () => {
+import { useInView } from "react-intersection-observer";
+
+const Hero = ({ setCurSectionIndicator }) => {
+	const { ref, inView } = useInView({ threshold: 0.2 });
+
+	useEffect(() => {
+		if (inView) {
+			setCurSectionIndicator("home");
+		}
+	}, [inView]);
+
 	return (
-		<div className="h-full">
+		<div ref={ref} className="h-full">
 			<img src={heroImage} className="object-cover h-full" />
 			<div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full p-6 bg-black bg-opacity-60">
 				<div className="flex flex-col gap-8 ">

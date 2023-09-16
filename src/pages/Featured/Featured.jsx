@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+
+import { useInView } from "react-intersection-observer";
 
 import PropertiesContext from "../../context/propertiesContext";
 
@@ -7,15 +9,26 @@ import { Link } from "react-router-dom";
 
 import { FaEarthAsia, FaLocationDot, FaHouse } from "react-icons/fa6";
 
-const Featured = () => {
+const Featured = ({ setCurSectionIndicator }) => {
 	const { properties } = useContext(PropertiesContext);
+
+	const { ref, inView } = useInView({ threshold: 0.2 });
+
+	useEffect(() => {
+		if (inView) {
+			setCurSectionIndicator("featured");
+		}
+	}, [inView]);
 
 	const propertiesElement = properties.map((property) => (
 		<FeaturedCard key={property.id} property={property} />
 	));
 
 	return (
-		<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white">
+		<div
+			ref={ref}
+			className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 pt-24 text-gray-600 bg-white"
+		>
 			<div className="flex flex-col gap-2">
 				<h1 className="text-3xl font-semibold">Featured Listing</h1>
 				<span>Find the property that fits you in our listings</span>
