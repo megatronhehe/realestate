@@ -4,7 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 import { useParams } from "react-router";
 
-import { FaLocationDot, FaRoad, FaSquare, FaHouse } from "react-icons/fa6";
+import {
+	FaLocationDot,
+	FaRoad,
+	FaSquare,
+	FaHouse,
+	FaAngleLeft,
+} from "react-icons/fa6";
 
 const PropertyDetails = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -40,9 +46,9 @@ const PropertyDetails = () => {
 		<div className="relative flex flex-col w-full h-full max-w-4xl gap-4 p-6 pt-20 text-gray-600 bg-white">
 			<button
 				onClick={() => nav(-1)}
-				className="self-start text-sm text-gray-400"
+				className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-white"
 			>
-				back
+				<FaAngleLeft />
 			</button>
 			{isLoading ? (
 				"loading..."
