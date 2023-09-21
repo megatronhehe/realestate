@@ -66,7 +66,10 @@ function App() {
 						path="/properties/:id"
 						element={
 							<section className="relative flex justify-center h-screen text-gray-200 bg-white">
-								<PropertyDetails />
+								<PropertyDetails
+									curSectionIndicator={curSectionIndicator}
+									setCurSectionIndicator={setCurSectionIndicator}
+								/>
 							</section>
 						}
 					/>

@@ -12,7 +12,7 @@ import {
 	FaAngleLeft,
 } from "react-icons/fa6";
 
-const PropertyDetails = () => {
+const PropertyDetails = ({ curSectionIndicator, setCurSectionIndicator }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [thisProperty, setThisProperty] = useState({});
@@ -21,6 +21,10 @@ const PropertyDetails = () => {
 	const nav = useNavigate();
 
 	const { id } = useParams();
+
+	useEffect(() => {
+		setCurSectionIndicator("");
+	}, [curSectionIndicator]);
 
 	useEffect(() => {
 		setError("");
