@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/Hero/Hero";
 import Listings from "./pages/Listings/Listings";
-import Whyus from "./pages/Whyus/Whyus";
+import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import { Route, Routes } from "react-router";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
@@ -39,7 +39,7 @@ function App() {
 									id="about"
 									className="relative h-screen text-gray-200 snap-center"
 								>
-									<Whyus setCurSectionIndicator={setCurSectionIndicator} />
+									<About setCurSectionIndicator={setCurSectionIndicator} />
 								</section>
 
 								<section
