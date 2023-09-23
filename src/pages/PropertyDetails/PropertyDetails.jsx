@@ -12,7 +12,7 @@ import {
 	FaAngleLeft,
 } from "react-icons/fa6";
 
-const PropertyDetails = ({ curSectionIndicator, setCurSectionIndicator }) => {
+const PropertyDetails = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [thisProperty, setThisProperty] = useState({});
@@ -21,10 +21,6 @@ const PropertyDetails = ({ curSectionIndicator, setCurSectionIndicator }) => {
 	const nav = useNavigate();
 
 	const { id } = useParams();
-
-	useEffect(() => {
-		setCurSectionIndicator("");
-	}, [curSectionIndicator]);
 
 	useEffect(() => {
 		setError("");
@@ -47,102 +43,104 @@ const PropertyDetails = ({ curSectionIndicator, setCurSectionIndicator }) => {
 		thisProperty.type === "House" ? <FaHouse /> : <FaSquare />;
 
 	return (
-		<div className="relative flex flex-col w-full h-full max-w-4xl gap-4 p-6 pt-20 text-gray-600 bg-white">
-			<button
-				onClick={() => nav(-1)}
-				className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-white"
-			>
-				<FaAngleLeft />
-			</button>
-			{isLoading ? (
-				"loading..."
-			) : isErrorExist ? (
-				error
-			) : (
-				<>
-					<img
-						src={`../${thisProperty.images[0]}`}
-						className="object-contain rounded-xl sm:h-1/2"
-					/>
+		<section className="flex justify-center">
+			<div className="relative flex flex-col w-full h-full max-w-4xl gap-4 p-4 text-gray-600 bg-white">
+				<button
+					onClick={() => nav(-1)}
+					className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-white"
+				>
+					<FaAngleLeft />
+				</button>
+				{isLoading ? (
+					"loading..."
+				) : isErrorExist ? (
+					error
+				) : (
+					<>
+						<img
+							src={`../${thisProperty.images[0]}`}
+							className="object-contain rounded-xl sm:h-1/2"
+						/>
 
-					<div className="flex gap-4 pb-2 border-b">
-						<div className="w-1/2">
-							<h2 className="text-2xl font-semibold text-orange-400">
-								{thisProperty.location.city}
-							</h2>
-							<span>{thisProperty.location.province}</span>
-						</div>
+						<div className="flex gap-4 pb-2 border-b">
+							<div className="w-1/2">
+								<h2 className="text-2xl font-semibold text-orange-400">
+									{thisProperty.location.city}
+								</h2>
+								<span>{thisProperty.location.province}</span>
+							</div>
 
-						<div className="flex flex-col items-end w-1/2">
-							<h2 className="text-2xl font-semibold">
-								Rp.{thisProperty.price},-
-							</h2>
-							<span className="flex items-center gap-2">
-								{thisProperty.type}
-								{displayIcon}
-							</span>
-						</div>
-					</div>
-
-					<div className="flex w-full">
-						<button
-							onClick={() => setSelectedSubSection("description")}
-							className={`items-center w-1/2 border-b-4 ${
-								selectedSubSection === "description"
-									? "border-orange-400 text-orange-400"
-									: "border-white"
-							} pb-1`}
-						>
-							Description
-						</button>
-						<button
-							onClick={() => setSelectedSubSection("details")}
-							className={`items-center w-1/2 border-b-4 ${
-								selectedSubSection === "details"
-									? "border-orange-400 text-orange-400"
-									: "border-white"
-							} pb-1`}
-						>
-							Details
-						</button>
-					</div>
-
-					{selectedSubSection === "description" ? (
-						<div>
-							<p>{thisProperty.description}</p>
-						</div>
-					) : (
-						<div className="">
-							<ul className="flex flex-col gap-2">
-								<li className="flex items-center gap-4">
-									<FaLocationDot /> {thisProperty.location.city}
-									{", "}
-									{thisProperty.location.province}
-								</li>
-
-								<li className="flex items-center gap-4">
-									<FaRoad />
-									{thisProperty.location.address}
-								</li>
-
-								<li className="flex items-center gap-4">
-									{displayIcon}
-									{thisProperty.type}
-								</li>
-
-								<li className="font-semibold text-orange-400 ">
+							<div className="flex flex-col items-end w-1/2">
+								<h2 className="text-2xl font-semibold">
 									Rp.{thisProperty.price},-
-								</li>
-							</ul>
+								</h2>
+								<span className="flex items-center gap-2">
+									{thisProperty.type}
+									{displayIcon}
+								</span>
+							</div>
 						</div>
-					)}
 
-					<button className="absolute px-4 py-2 text-white bg-orange-400 rounded-full bottom-6 right-6">
-						contact now
-					</button>
-				</>
-			)}
-		</div>
+						<div className="flex w-full">
+							<button
+								onClick={() => setSelectedSubSection("description")}
+								className={`items-center w-1/2 border-b-4 ${
+									selectedSubSection === "description"
+										? "border-orange-400 text-orange-400"
+										: "border-white"
+								} pb-1`}
+							>
+								Description
+							</button>
+							<button
+								onClick={() => setSelectedSubSection("details")}
+								className={`items-center w-1/2 border-b-4 ${
+									selectedSubSection === "details"
+										? "border-orange-400 text-orange-400"
+										: "border-white"
+								} pb-1`}
+							>
+								Details
+							</button>
+						</div>
+
+						{selectedSubSection === "description" ? (
+							<div>
+								<p>{thisProperty.description}</p>
+							</div>
+						) : (
+							<div className="">
+								<ul className="flex flex-col gap-2">
+									<li className="flex items-center gap-4">
+										<FaLocationDot /> {thisProperty.location.city}
+										{", "}
+										{thisProperty.location.province}
+									</li>
+
+									<li className="flex items-center gap-4">
+										<FaRoad />
+										{thisProperty.location.address}
+									</li>
+
+									<li className="flex items-center gap-4">
+										{displayIcon}
+										{thisProperty.type}
+									</li>
+
+									<li className="font-semibold text-orange-400 ">
+										Rp.{thisProperty.price},-
+									</li>
+								</ul>
+							</div>
+						)}
+
+						<button className="absolute px-4 py-2 text-white bg-orange-400 rounded-full bottom-6 right-6">
+							contact now
+						</button>
+					</>
+				)}
+			</div>
+		</section>
 	);
 };
 

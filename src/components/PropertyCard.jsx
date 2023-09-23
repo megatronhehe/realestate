@@ -4,7 +4,7 @@ import { FaLocationDot, FaSquare, FaHouse } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 
-const FeaturedCard = ({ property }) => {
+const PropertyCard = ({ property }) => {
 	const { id, location, type, images, price } = property;
 
 	const [isHover, setIsHover] = useState(false);
@@ -15,7 +15,7 @@ const FeaturedCard = ({ property }) => {
 		<li
 			onMouseEnter={() => setIsHover(true)}
 			onMouseLeave={() => setIsHover(false)}
-			className="relative flex flex-col justify-between flex-shrink-0 w-full h-56 overflow-hidden bg-gray-100 snap-center rounded-xl sm:h-80"
+			className="relative flex flex-col justify-between flex-shrink-0 w-5/6 h-56 overflow-hidden bg-gray-100 sm:w-full snap-center rounded-xl sm:h-80"
 		>
 			<img
 				src={`../${images[0]}`}
@@ -62,4 +62,4 @@ const FeaturedCard = ({ property }) => {
 	);
 };
 
-export default FeaturedCard;
+export default PropertyCard;
