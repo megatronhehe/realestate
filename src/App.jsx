@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 
-import Navbar from "./components/Navbar";
+import NavbarPC from "./components/NavbarPC";
+import NavbarMobile from "./components/NavbarMobile";
 import Properties from "./pages/Properties/Properties";
 import { Route, Routes } from "react-router";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 import Main from "./pages/Main/Main";
 
+import { useResponsive } from "./hooks/useResponsive";
+
 function App() {
+	const { isMobileMode } = useResponsive();
+
 	return (
 		<>
-			<Navbar />
+			{isMobileMode ? <NavbarMobile /> : <NavbarPC />}
 			<main className="font-extralight">
 				<Routes>
 					<Route path="/" element={<Main />} />

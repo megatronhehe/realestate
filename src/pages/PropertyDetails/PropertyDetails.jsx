@@ -10,13 +10,14 @@ import {
 	FaSquare,
 	FaHouse,
 	FaAngleLeft,
+	FaExpand,
+	FaLayerGroup,
 } from "react-icons/fa6";
 
 const PropertyDetails = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [thisProperty, setThisProperty] = useState({});
-	const [selectedSubSection, setSelectedSubSection] = useState("description");
 
 	const nav = useNavigate();
 
@@ -42,101 +43,79 @@ const PropertyDetails = () => {
 	const displayIcon =
 		thisProperty.type === "House" ? <FaHouse /> : <FaSquare />;
 
+	const simplifyPrice = (price) => {
+		return price / 1000000;
+	};
+
 	return (
 		<section className="flex justify-center">
-			<div className="relative flex flex-col w-full h-full max-w-4xl gap-4 p-4 text-gray-600 bg-white">
-				<button
-					onClick={() => nav(-1)}
-					className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-white"
-				>
-					<FaAngleLeft />
-				</button>
+			<div className="flex flex-col w-full h-full max-w-4xl gap-4 p-4 text-gray-600 bg-white ">
 				{isLoading ? (
 					"loading..."
 				) : isErrorExist ? (
 					error
 				) : (
 					<>
-						<img
-							src={`../${thisProperty.images[0]}`}
-							className="object-contain rounded-xl sm:h-1/2"
-						/>
+						<div className="relative">
+							<img
+								src={`../${thisProperty.images[0]}`}
+								className="object-contain rounded-xl sm:h-1/2"
+							/>
+							<button
+								onClick={() => nav(-1)}
+								className="absolute flex items-center self-start justify-center w-8 h-8 text-sm text-orange-400 duration-200 bg-white rounded-full bg-opacity-80 top-2 left-2 backdrop-filter backdrop-blur-sm"
+							>
+								<FaAngleLeft />
+							</button>
+						</div>
 
-						<div className="flex gap-4 pb-2 border-b">
-							<div className="w-1/2">
-								<h2 className="text-2xl font-semibold text-orange-400">
-									{thisProperty.location.city}
-								</h2>
-								<span>{thisProperty.location.province}</span>
-							</div>
+						<h1 className="text-xl font-normal tracking-wide">
+							<span className="font-bold text-orange-400">
+								{thisProperty.type}
+							</span>{" "}
+							at {thisProperty.location.city}, {thisProperty.location.province}
+						</h1>
 
-							<div className="flex flex-col items-end w-1/2">
-								<h2 className="text-2xl font-semibold">
-									Rp.{thisProperty.price},-
-								</h2>
-								<span className="flex items-center gap-2">
-									{thisProperty.type}
+						<ul className="flex gap-2">
+							<li className="flex flex-col items-center justify-center w-1/4 h-24 gap-2 text-sm bg-gray-100 rounded-xl">
+								<div className="p-2 text-2xl text-orange-300 bg-white rounded-full">
 									{displayIcon}
-								</span>
-							</div>
+								</div>
+								{thisProperty.type}
+							</li>
+							<li className="flex flex-col items-center justify-center w-1/4 h-24 gap-2 text-sm bg-gray-100 rounded-xl">
+								<div className="p-2 text-2xl text-gray-600 bg-white rounded-full">
+									<FaExpand />
+								</div>
+								{thisProperty.size} m2
+							</li>
+							<li className="flex flex-col items-center justify-center w-1/4 h-24 gap-2 text-sm bg-gray-100 rounded-xl">
+								<div className="p-2 text-2xl text-green-300 bg-white rounded-full">
+									<FaLayerGroup />
+								</div>
+								{simplifyPrice(thisProperty.priceBySize)} jt/m2
+							</li>
+							<li className="flex flex-col items-center justify-center w-1/4 h-24 gap-2 text-sm bg-gray-100 rounded-xl">
+								<div className="p-2 text-2xl text-red-400 bg-white rounded-full">
+									<FaLocationDot />
+								</div>
+								{thisProperty.location.city}
+							</li>
+						</ul>
+
+						<div>
+							<h2 className="font-semibold">Description</h2>
+							<p className="mt-4 text-sm">{thisProperty.description} </p>
 						</div>
 
-						<div className="flex w-full">
-							<button
-								onClick={() => setSelectedSubSection("description")}
-								className={`items-center w-1/2 border-b-4 ${
-									selectedSubSection === "description"
-										? "border-orange-400 text-orange-400"
-										: "border-white"
-								} pb-1`}
-							>
-								Description
-							</button>
-							<button
-								onClick={() => setSelectedSubSection("details")}
-								className={`items-center w-1/2 border-b-4 ${
-									selectedSubSection === "details"
-										? "border-orange-400 text-orange-400"
-										: "border-white"
-								} pb-1`}
-							>
-								Details
+						<div className="flex items-center justify-between">
+							<h3 className="text-2xl font-bold text-orange-400">
+								Rp.{thisProperty.price} Juta
+							</h3>
+							<button className="px-4 py-1 font-semibold text-white bg-orange-300 rounded-full">
+								contact
 							</button>
 						</div>
-
-						{selectedSubSection === "description" ? (
-							<div>
-								<p>{thisProperty.description}</p>
-							</div>
-						) : (
-							<div className="">
-								<ul className="flex flex-col gap-2">
-									<li className="flex items-center gap-4">
-										<FaLocationDot /> {thisProperty.location.city}
-										{", "}
-										{thisProperty.location.province}
-									</li>
-
-									<li className="flex items-center gap-4">
-										<FaRoad />
-										{thisProperty.location.address}
-									</li>
-
-									<li className="flex items-center gap-4">
-										{displayIcon}
-										{thisProperty.type}
-									</li>
-
-									<li className="font-semibold text-orange-400 ">
-										Rp.{thisProperty.price},-
-									</li>
-								</ul>
-							</div>
-						)}
-
-						<button className="absolute px-4 py-2 text-white bg-orange-400 rounded-full bottom-6 right-6">
-							contact now
-						</button>
 					</>
 				)}
 			</div>

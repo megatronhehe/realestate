@@ -5,18 +5,18 @@ import {
 	FaList,
 	FaCircleInfo,
 	FaPhoneFlip,
-	FaStar,
+	FaDiamond,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const NavbarDropdown = ({ setToggleNavbar }) => {
+const NavbarDropdown = ({ setToggleDropdown }) => {
 	const [curSection, setCurSection] = useState("");
 
 	const scrollToSection = (section) => {
 		const element = document.getElementById(section);
 		if (element) {
 			element.scrollIntoView({ behavior: "smooth" });
-			setToggleNavbar(false);
+			setToggleDropdown(false);
 		}
 	};
 
@@ -26,69 +26,38 @@ const NavbarDropdown = ({ setToggleNavbar }) => {
 
 	return (
 		<section
-			onClick={() => setToggleNavbar(false)}
-			className="fixed top-0 left-0 z-30 flex items-end w-full h-full p-4 bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm"
+			onClick={() => setToggleDropdown(false)}
+			className="fixed top-0 left-0 z-30 flex flex-col items-end justify-end w-full h-full p-4 text-gray-600 bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm font-extralight"
 		>
-			<ul
-				onClick={(e) => {
-					e.stopPropagation();
-				}}
-				className="flex flex-col items-center justify-center w-full gap-2 py-4 text-gray-600 bg-white rounded-xl"
-			>
-				<li>
-					<Link
-						to="/"
-						onClick={() => setCurSection("home")}
-						className="flex items-center justify-between w-32 gap-2 px-4 py-2 duration-200 hover:bg-orange-400 hover:text-white rounded-xl"
-					>
+			<div className="w-full p-4 bg-gray-100 rounded-xl">
+				<h1 className="flex items-center justify-center gap-2 pb-4 mb-4 font-bold tracking-widest text-center text-orange-400 border-b">
+					<FaDiamond />
+					Oka Estate
+				</h1>
+				<ul
+					onClick={(e) => {
+						e.stopPropagation();
+					}}
+					className="grid grid-cols-2 gap-2"
+				>
+					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
 						<FaHouse />
 						Home
-					</Link>
-				</li>
-
-				<li>
-					<Link
-						to="/"
-						onClick={() => setCurSection("featured")}
-						className="flex items-center justify-between w-32 gap-2 px-4 py-2 duration-200 hover:bg-orange-400 hover:text-white rounded-xl"
-					>
-						<FaStar />
-						Featured
-					</Link>
-				</li>
-
-				<li>
-					<Link
-						to="/properties"
-						className="flex items-center justify-between w-32 gap-2 px-4 py-2 duration-200 hover:bg-orange-400 hover:text-white rounded-xl"
-					>
+					</li>
+					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
 						<FaList />
 						Listing
-					</Link>
-				</li>
-
-				<li>
-					<Link
-						to="/"
-						onClick={() => setCurSection("about")}
-						className="flex items-center justify-between w-32 gap-2 px-4 py-2 duration-200 hover:bg-orange-400 hover:text-white rounded-xl"
-					>
+					</li>
+					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
 						<FaCircleInfo />
 						About
-					</Link>
-				</li>
-
-				<li>
-					<Link
-						to="/"
-						onClick={() => setCurSection("contact")}
-						className="flex items-center justify-between w-32 gap-2 px-4 py-2 duration-200 hover:bg-orange-400 hover:text-white rounded-xl"
-					>
+					</li>
+					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
 						<FaPhoneFlip />
 						Contact
-					</Link>
-				</li>
-			</ul>
+					</li>
+				</ul>
+			</div>
 		</section>
 	);
 };

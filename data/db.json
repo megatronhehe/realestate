@@ -7,10 +7,12 @@
 				"city": "Malang",
 				"province": "East Java"
 			},
-			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto numquam saepe perferendis a! Nostrum, amet labore. Perspiciatis dolorum cupiditate distinctio quisquam autem, praesentium, facere corrupti hic commodi veniam quod.",
 			"type": "Land",
 			"images": ["src/assets/malang.jpg"],
-			"price": 800
+			"price": 800,
+			"size": 100,
+			"priceBySize": 2000000
 		},
 		{
 			"id": 1,
@@ -19,10 +21,12 @@
 				"city": "Denpasar",
 				"province": "Bali"
 			},
-			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto numquam saepe perferendis a! Nostrum, amet labore. Perspiciatis dolorum cupiditate distinctio quisquam autem, praesentium, facere corrupti hic commodi veniam quod.",
 			"type": "House",
 			"images": ["src/assets/bali.jpg"],
-			"price": 900
+			"price": 900,
+			"size": 100,
+			"priceBySize": 2000000
 		},
 		{
 			"id": 2,
@@ -31,10 +35,12 @@
 				"city": "Balikpapan",
 				"province": "East Borneo"
 			},
-			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto numquam saepe perferendis a! Nostrum, amet labore. Perspiciatis dolorum cupiditate distinctio quisquam autem, praesentium, facere corrupti hic commodi veniam quod.",
 			"type": "Land",
 			"images": ["src/assets/balikpapan.jpg"],
-			"price": 800
+			"price": 800,
+			"size": 100,
+			"priceBySize": 2000000
 		},
 		{
 			"id": 3,
@@ -43,10 +49,26 @@
 				"city": "Bontang",
 				"province": "East Borneo"
 			},
-			"description": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet ",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto numquam saepe perferendis a! Nostrum, amet labore. Perspiciatis dolorum cupiditate distinctio quisquam autem, praesentium, facere corrupti hic commodi veniam quod.",
 			"type": "House",
 			"images": ["src/assets/bontang.jpg"],
-			"price": 600
+			"price": 600,
+			"size": 100,
+			"priceBySize": 2000000
+		},
+		{
+			"id": 4,
+			"location": {
+				"address": "jl.xxxx no.xxxx",
+				"city": "Surabaya",
+				"province": "East Java"
+			},
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut iusto numquam saepe perferendis a! Nostrum, amet labore. Perspiciatis dolorum cupiditate distinctio quisquam autem, praesentium, facere corrupti hic commodi veniam quod.",
+			"type": "House",
+			"images": ["src/assets/surabaya.jpg"],
+			"price": 800,
+			"size": 100,
+			"priceBySize": 2000000
 		}
 	]
 }
