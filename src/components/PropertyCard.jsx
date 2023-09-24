@@ -15,21 +15,20 @@ const PropertyCard = ({ property }) => {
 	const displayIcon = type === "House" ? <FaHouse /> : <FaSquare />;
 
 	return (
-		<li className="relative flex flex-col justify-between flex-shrink-0 w-5/6 h-56 overflow-hidden bg-gray-100 sm:w-full snap-center rounded-xl sm:h-80">
+		<li className="relative flex flex-col justify-between flex-shrink-0 w-5/6 h-56 overflow-hidden bg-gray-100 sm:w-full snap-center rounded-xl sm:h-80 ">
 			<img
 				src={`../${images[0]}`}
-				className="absolute top-0 left-0 object-cover w-full h-full"
+				className="absolute top-0 left-0 object-cover w-full h-full "
 			/>
 
-			<div
-				className={`z-20 flex h-full p-3 duration-200 text-white bg-opacity-20 flex-col justify-between bg-black`}
-			>
+			<div className="z-20 flex flex-col justify-between h-full p-3 text-white duration-200 bg-black bg-opacity-40 hover:bg-opacity-0">
 				<Link to={`/properties/${id}`} className="flex justify-end w-full">
-					<span className="flex items-center gap-2 px-3 py-1 text-sm font-normal text-white bg-orange-400 rounded-xl">
+					<span className="flex items-center gap-2 px-3 py-1 text-sm font-normal text-white duration-200 bg-orange-400 rounded-xl hover:scale-110">
 						View {type}
 						<FaArrowUpRightFromSquare />
 					</span>
 				</Link>
+
 				<div className="w-full">
 					<h2 className="mb-1 text-2xl font-semibold tracking-wide drop-shadow-lg">
 						{location.city}

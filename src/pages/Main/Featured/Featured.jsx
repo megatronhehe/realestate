@@ -21,7 +21,7 @@ const Featured = () => {
 	));
 
 	return (
-		<section className="flex justify-center sm:mt-20">
+		<section className="flex justify-center mt-20">
 			<div className="flex flex-col w-full max-w-4xl gap-6 p-6 text-gray-600 bg-white">
 				<div className="flex flex-col gap-6">
 					<h1 className="text-3xl font-semibold tracking-wide">
@@ -35,7 +35,7 @@ const Featured = () => {
 					</p>
 				</div>
 
-				<ul className="relative flex items-center gap-4 overflow-auto sm:gap-8 sm:grid sm:grid-cols-3 snap-mandatory snap-x">
+				<ul className="relative flex items-center gap-4 overflow-auto sm:grid sm:grid-cols-3 snap-mandatory snap-x">
 					{propertiesElement}
 					{isMobileMode && <MoreCard />}
 				</ul>

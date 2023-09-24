@@ -1,64 +1,53 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import {
-	FaHouse,
-	FaList,
-	FaCircleInfo,
-	FaPhoneFlip,
-	FaDiamond,
-} from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { FaHouse, FaList, FaPhoneFlip, FaDiamond } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+
+import { motion } from "framer-motion";
 
 const NavbarDropdown = ({ setToggleDropdown }) => {
-	const [curSection, setCurSection] = useState("");
-
-	const scrollToSection = (section) => {
-		const element = document.getElementById(section);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-			setToggleDropdown(false);
-		}
-	};
-
-	useEffect(() => {
-		scrollToSection(curSection);
-	}, [curSection]);
-
 	return (
-		<section
+		<motion.ul
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 			onClick={() => setToggleDropdown(false)}
-			className="fixed top-0 left-0 z-30 flex flex-col items-end justify-end w-full h-full p-4 text-gray-600 bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm font-extralight"
+			className="fixed top-0 left-0 z-40 flex flex-col justify-end w-full h-full gap-2 p-2 bg-opacity-10 rounded-xl backdrop-filter backdrop-blur-sm"
 		>
-			<div className="w-full p-4 bg-gray-100 rounded-xl">
-				<h1 className="flex items-center justify-center gap-2 pb-4 mb-4 font-bold tracking-widest text-center text-orange-400 border-b">
-					<FaDiamond />
-					Oka Estate
-				</h1>
-				<ul
-					onClick={(e) => {
-						e.stopPropagation();
-					}}
-					className="grid grid-cols-2 gap-2"
-				>
-					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
-						<FaHouse />
-						Home
-					</li>
-					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
-						<FaList />
-						Listing
-					</li>
-					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
-						<FaCircleInfo />
-						About
-					</li>
-					<li className="flex items-center justify-center gap-2 px-4 py-2 text-center bg-white rounded-xl">
-						<FaPhoneFlip />
-						Contact
-					</li>
-				</ul>
-			</div>
-		</section>
+			<NavLink
+				to="/"
+				className="flex flex-col items-center justify-center gap-2 px-4 py-4 text-orange-400 bg-black rounded-lg bg-opacity-60"
+			>
+				<FaDiamond className="text-lg rounded-full bg-opacity-80" />
+				<span className="font-semibold tracking-widest text-normal">
+					Oka <span className="text-white">Estate</span>
+				</span>
+			</NavLink>
+
+			<NavLink
+				to="/"
+				className="flex items-center justify-center gap-4 px-4 py-2 text-white bg-black rounded-lg bg-opacity-60"
+			>
+				<FaHouse className="text-lg" />
+				<span className="text-sm">Home</span>
+			</NavLink>
+
+			<NavLink
+				to="/properties"
+				className="flex items-center justify-center gap-4 px-4 py-2 text-white bg-black rounded-lg bg-opacity-60"
+			>
+				<FaList />
+				<span className="text-sm">Listing</span>
+			</NavLink>
+
+			<NavLink
+				to="/contact"
+				className="flex items-center justify-center gap-4 px-4 py-2 text-white bg-black rounded-lg bg-opacity-60"
+			>
+				<FaPhoneFlip />
+				<span className="text-sm">Contact</span>
+			</NavLink>
+		</motion.ul>
 	);
 };
 

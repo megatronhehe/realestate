@@ -10,6 +10,8 @@ import PropertyCard from "../../components/PropertyCard";
 
 import { FaAngleLeft } from "react-icons/fa6";
 
+import { motion } from "framer-motion";
+
 const Properties = () => {
 	const { properties, isLoading } = useContext(PropertiesContext);
 
@@ -33,7 +35,12 @@ const Properties = () => {
 	));
 
 	return (
-		<section className="flex justify-center">
+		<motion.section
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="flex justify-center"
+		>
 			<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 text-gray-600 bg-white">
 				<button
 					onClick={() => nav(-1)}
@@ -68,7 +75,7 @@ const Properties = () => {
 					</ul>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };
 
