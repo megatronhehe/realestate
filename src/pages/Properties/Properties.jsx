@@ -34,10 +34,10 @@ const Properties = () => {
 
 	return (
 		<section className="flex justify-center">
-			<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-4 text-gray-600 bg-white">
+			<div className="flex flex-col w-full h-full max-w-4xl gap-6 p-6 text-gray-600 bg-white">
 				<button
 					onClick={() => nav(-1)}
-					className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-white"
+					className="flex items-center self-start justify-center w-8 h-8 text-sm text-gray-400 duration-200 border rounded-full hover:bg-orange-400 hover:text-white hover:border-orange-400"
 				>
 					<FaAngleLeft />
 				</button>

@@ -1,8 +1,8 @@
 import React from "react";
 
-import heroImage from "../../../assets/heroImage.jpg";
+import heroImage from "../../assets/heroImage.jpg";
 
-import { useResponsive } from "../../../hooks/useResponsive";
+import { useResponsive } from "../../hooks/useResponsive";
 
 const Hero = () => {
 	const { isMobileMode } = useResponsive();

@@ -1,7 +1,8 @@
 import React from "react";
-import Hero from "./Hero/Hero";
+import Hero from "./Hero";
 import Featured from "./Featured/Featured";
 import Numbers from "./Numbers";
+import Whyus from "./Whyus";
 
 const Main = () => {
 	return (
@@ -9,6 +10,7 @@ const Main = () => {
 			<Hero />
 			<Numbers />
 			<Featured />
+			<Whyus />
 		</>
 	);
 };
