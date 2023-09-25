@@ -17,8 +17,8 @@ const NavbarPC = () => {
 					<NavLink
 						to="/"
 						className={({ isActive }) =>
-							`border-b-4 py-4 px-6 ${
-								isActive ? "border-orange-400" : "border-black"
+							`border-b-4 py-4 text-center w-20 duration-200 ${
+								isActive ? "border-orange-400 font-semibold" : "border-black"
 							}`
 						}
 					>
@@ -27,8 +27,8 @@ const NavbarPC = () => {
 					<NavLink
 						to="/properties"
 						className={({ isActive }) =>
-							`border-b-4 py-4 px-6 ${
-								isActive ? "border-orange-400" : "border-black"
+							`border-b-4 py-4 text-center w-20 duration-200 ${
+								isActive ? "border-orange-400 font-semibold" : "border-black"
 							}`
 						}
 					>
@@ -37,8 +37,8 @@ const NavbarPC = () => {
 					<NavLink
 						to="/contact"
 						className={({ isActive }) =>
-							`border-b-4 py-4 px-6 ${
-								isActive ? "border-orange-400" : "border-black"
+							`border-b-4 py-4 text-center w-20 duration-200 ${
+								isActive ? "border-orange-400 font-semibold" : "border-black"
 							}`
 						}
 					>

@@ -6,7 +6,7 @@ import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa6";
 
 const Hero = () => {
 	return (
-		<section className="h-screen text-gray-100 sm:h-96">
+		<header className="h-screen text-gray-100 sm:h-96">
 			<div className="relative h-full ">
 				<img
 					src={heroImage}
@@ -40,7 +40,7 @@ const Hero = () => {
 					</li>
 				</ul>
 			</div>
-		</section>
+		</header>
 	);
 };
 
