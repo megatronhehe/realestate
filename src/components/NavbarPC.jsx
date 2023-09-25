@@ -8,10 +8,15 @@ const NavbarPC = () => {
 	return (
 		<>
 			<nav className="sticky top-0 z-40 flex items-center justify-between w-full px-8 text-gray-200 bg-black">
-				<h1 className="flex items-center gap-2 text-lg font-semibold tracking-wide">
-					<FaDiamond />
-					Oka Estate
-				</h1>
+				<NavLink
+					to="/"
+					className="flex items-center gap-2 text-lg font-semibold tracking-wide"
+				>
+					<h1 className="flex items-center gap-2">
+						<FaDiamond />
+						Oka Estate
+					</h1>
+				</NavLink>
 
 				<ul className="flex text-sm font-extralight ">
 					<NavLink

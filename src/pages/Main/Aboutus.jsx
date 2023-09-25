@@ -1,6 +1,11 @@
 import React from "react";
 
-import { FaCircleUser } from "react-icons/fa6";
+import {
+	FaInstagram,
+	FaWhatsapp,
+	FaTiktok,
+	FaCircleUser,
+} from "react-icons/fa6";
 
 const Aboutus = () => {
 	return (
@@ -15,6 +20,17 @@ const Aboutus = () => {
 					spread across big cities and big provinces around Indonesia. We are
 					legal, trusted, and we operate by peer to peer.
 				</p>
+				<ul className="flex justify-center gap-4 text-3xl text-gray-600">
+					<li>
+						<FaInstagram />
+					</li>
+					<li>
+						<FaWhatsapp />
+					</li>
+					<li>
+						<FaTiktok />
+					</li>
+				</ul>
 			</div>
 		</section>
 	);

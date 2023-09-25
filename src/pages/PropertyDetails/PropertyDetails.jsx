@@ -6,6 +6,8 @@ import { useParams } from "react-router";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import { useResponsive } from "../../hooks/useResponsive";
+
 import {
 	FaLocationDot,
 	FaSquare,
@@ -20,6 +22,8 @@ const PropertyDetails = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState("");
 	const [thisProperty, setThisProperty] = useState({});
+
+	const { isMobileMode } = useResponsive();
 
 	const nav = useNavigate();
 
@@ -94,13 +98,21 @@ const PropertyDetails = () => {
 							</div>
 
 							<div className="flex flex-col gap-4 sm:gap-6 sm:w-1/2 sm:border-l sm:pl-6">
-								<h1 className="text-xl font-normal tracking-wide">
-									<span className="font-bold text-orange-400">
-										{thisProperty.type}
-									</span>{" "}
-									at {thisProperty.location.city},{" "}
-									{thisProperty.location.province}
-								</h1>
+								<div>
+									<h1 className="text-xl">
+										<span className="font-semibold text-orange-400">
+											{thisProperty.type}
+										</span>{" "}
+										at {thisProperty.location.city},{" "}
+										<span className="text-sm">
+											{thisProperty.location.province}
+										</span>
+									</h1>
+									<span className="flex items-center gap-2">
+										<FaLocationDot />
+										{thisProperty.location.address}
+									</span>
+								</div>
 
 								<ul className="flex gap-2 ">
 									<li className="flex flex-col items-center justify-center w-1/4 h-24 gap-2 text-sm bg-gray-100 rounded-xl">
@@ -129,14 +141,14 @@ const PropertyDetails = () => {
 									</li>
 								</ul>
 
-								<div className="sm:border-b "></div>
+								{!isMobileMode && <div className="sm:border-b "></div>}
 
 								<div>
 									<h2 className="font-semibold">Description</h2>
 									<p className="mt-4 text-sm">{thisProperty.description} </p>
 								</div>
 
-								<div className="sm:border-b "></div>
+								{!isMobileMode && <div className="sm:border-b "></div>}
 
 								<div className="flex items-center justify-between">
 									<h3 className="text-2xl font-bold text-orange-400">

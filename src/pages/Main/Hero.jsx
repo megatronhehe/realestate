@@ -4,6 +4,8 @@ import heroImage from "../../assets/heroImage.jpg";
 
 import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa6";
 
+import { Link } from "react-router-dom";
+
 const Hero = () => {
 	return (
 		<header className="h-screen text-gray-100 sm:h-96">
@@ -23,9 +25,12 @@ const Hero = () => {
 						Here you can discover our humble listing of property such as houses
 						and lands spread across Indonesia
 					</p>
-					<button className="px-5 py-2 text-sm font-semibold duration-200 bg-orange-400 rounded-full hover:scale-110">
+					<Link
+						to="/properties"
+						className="px-5 py-2 text-sm font-semibold duration-200 bg-orange-400 rounded-full hover:scale-110"
+					>
 						our listing
-					</button>
+					</Link>
 				</div>
 
 				<ul className="absolute flex gap-4 text-3xl text-gray-400 bottom-4 right-4">

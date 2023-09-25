@@ -38,7 +38,7 @@ const PropertyCard = ({ property }) => {
 							<div className="flex items-center justify-center w-5 h-5 text-gray-100 bg-white rounded-full">
 								<FaLocationDot className="text-orange-300" />
 							</div>
-							<span className="text-gray-200">{location.province}</span>
+							<span className="text-white">{location.province}</span>
 						</div>
 						<div className="flex items-center self-end gap-1 px-2.5 bg-opacity-60 bg-black text-gray-200 py-0.5 text-sm rounded-full bottom">
 							{type}

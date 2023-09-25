@@ -28,7 +28,7 @@ const Featured = () => {
 						<span className="font-bold text-orange-400">Featured</span>{" "}
 						Properties
 					</h1>
-					<p>
+					<p className="text-sm">
 						Discover handpicked city properties for your lifestyle and
 						investments. Find prime locations, luxury living, and investment
 						opportunities. Here are some of our featured properties.
