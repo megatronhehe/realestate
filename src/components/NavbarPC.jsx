@@ -13,8 +13,8 @@ const NavbarPC = () => {
 					className="flex items-center gap-2 text-lg font-semibold tracking-wide"
 				>
 					<h1 className="flex items-center gap-2">
-						<FaDiamond />
-						Oka Estate
+						<FaDiamond className="text-orange-400" />
+						Pristine<span className="font-extralight">Realty</span>
 					</h1>
 				</NavLink>
 
