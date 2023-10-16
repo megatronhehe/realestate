@@ -4,6 +4,7 @@ import Featured from "./Featured/Featured";
 import Numbers from "./Numbers";
 import Whyus from "./Whyus";
 import Aboutus from "./Aboutus";
+import Footer from "./Footer";
 
 import { motion } from "framer-motion";
 
@@ -19,6 +20,7 @@ const Main = () => {
 			<Featured />
 			<Aboutus />
 			<Whyus />
+			<Footer />
 		</motion.div>
 	);
 };
