@@ -12,7 +12,7 @@ const NavbarMobile = () => {
 		<>
 			<nav
 				onClick={() => setToggleDropdown(true)}
-				className="fixed z-10 top-2 right-2"
+				className="fixed z-20 top-2 right-2"
 			>
 				<ul className="flex flex-col items-end gap-2">
 					<li className="flex items-center justify-center w-12 h-12 text-xl text-white bg-black rounded-full bg-opacity-40">

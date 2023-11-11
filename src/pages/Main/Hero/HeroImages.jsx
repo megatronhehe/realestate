@@ -21,9 +21,16 @@ export default function HeroImages() {
 
 	const [selectedIndex, setSelectedIndex] = useState(0);
 
+	const getRandomNumber = () => Math.floor(Math.random() * imageData.length);
+
 	useEffect(() => {
 		setInterval(() => {
-			const randomNumber = Math.floor(Math.random() * imageData.length);
+			const randomNumber = getRandomNumber();
+
+			if (randomNumber === selectedIndex) {
+				const newRandomNumber = getRandomNumber();
+				return setSelectedIndex(newRandomNumber);
+			}
 
 			setSelectedIndex(randomNumber);
 		}, 1500);
