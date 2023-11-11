@@ -14,9 +14,9 @@ import { Link } from "react-router-dom";
 const Hero = () => {
 	return (
 		<header className="flex items-center justify-center h-screen text-gray-100">
-			<div className="w-full max-w-4xl p-6 ">
-				<div className="flex gap-8 sm:items-center">
-					<div className="text-gray-800  sm:static">
+			<div className="w-full max-w-4xl p-0 sm:p-6">
+				<div className="flex items-center gap-8 sm:relative">
+					<div className="absolute p-8 text-white bg-black sm:bg-white sm:text-gray-800 backdrop-blur-sm sm:static bg-opacity-30">
 						<h1 className="text-4xl">
 							<span className="font-semibold">Invest</span> in your{" "}
 							<span className="font-semibold text-orange-400">Tomorrow</span>
@@ -33,7 +33,7 @@ const Hero = () => {
 						</button>
 					</div>
 
-					<div className="flex items-center gap-3">
+					<div className="flex items-center gap-3 p-4">
 						<div className="flex flex-col w-1/3 gap-3">
 							<div className="w-full h-44 ">
 								<img
