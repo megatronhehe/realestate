@@ -67,7 +67,7 @@ export default function HeroImages() {
 		));
 
 	return (
-		<div className="flex items-center gap-3 p-4">
+		<div className="flex items-center gap-3 p-4 sm:w-2/5">
 			<div className="flex flex-col w-1/3 gap-3">{leftImagesElement}</div>
 			<div className="flex flex-col w-1/3 gap-3">{middleImagesElement}</div>
 			<div className="flex flex-col w-1/3 gap-3">{rightImagesElement}</div>
