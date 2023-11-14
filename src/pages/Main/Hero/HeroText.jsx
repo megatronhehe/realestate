@@ -29,10 +29,10 @@ export default function HeroText() {
 					to="/properties"
 					className="flex items-center justify-center w-32 gap-2 px-4 py-2 text-white bg-orange-400 rounded-xl"
 				>
-					our listing <FaArrowRightLong />
+					Our listing <FaArrowRightLong />
 				</Link>
 				<button className="flex items-center justify-center w-32 gap-2 px-4 py-2 text-white bg-gray-700 rounded-xl">
-					contact us
+					Contact us
 				</button>
 			</div>
 		</div>
